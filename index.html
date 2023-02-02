@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
+  <!-- StyleSheet -->
+  <link rel="stylesheet" type="text/css" href="./scss/style.min.css">
+
+</head>
+
+<body>
+  <div class="page">
+    <header role="banner">
+      <nav role="navigation" class="nav countainer" id="nav">
+        <!-- Nav Left -->
+        <div class="nav-left">
+          <div class="logo" role="log">
+            <a href="#" class="logolink" role="link" target="_self">
+              <span>snap</span>
+            </a>
+          </div>
+        </div>
+        <!-- Center Nav -->
+        <div class="nav-center">
+
+          <ul class="navlist">
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Company</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Careers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">About</a></li>
+          </ul>
+        </div>
+        <!--/Center Nav -->
+        <!-- nav right -->
+        <div class="nav-right">
+
+          <button class="button login" id="butnLogin" role="button" type="button">Login</button>
+          <button class="button register" id="butnRegister" role="button" type="button">Register</button>
+
+        </div>
+        <!-- Nav right for mobile-->
+        <div class="nav-right_mobile"></div>
+      </nav>
+    </header>
+
+    <main role="main" class="hero container">
+      <div class="left">
+        <h1> Make remote work </h1>
+        <p>Get your team in sync, no matter your location. Streamline processes,
+          create team rituals, and watch productivity soar.</p>
+
+
+        <button class="button register" id="butnLearn" role="button" type="button">Learn more</button>
+        <div class="logo-f">
+          <img src="./images/client-databiz.svg" alt="client databiz" role="img">
+          <img src="./images/client-audiophile.svg" alt="client audiophile" role="img">
+          <img src="./images/client-meet.svg" alt="client meet" role="img">
+          <img src="./images/client-maker.svg" alt="client maker" role="img">
+        </div>
+      </div>
+      <div class="right">
+        <img src="./images/image-hero-desktop.png" alt="Desktop Hero" role="img">
+      </div>
+
+    </main>
+
+    <!-- /page -->
+  </div>
+
+  <footer role="contentinfo">
+
+  </footer>
+
+
+</body>
+
+</html>

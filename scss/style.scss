@@ -1,0 +1,252 @@
+$navhight: 60px;
+
+:root {
+    --AlmostWhite: hsl(0, 0%, 98%);
+    --MediumGray: hsl(0, 0%, 41%);
+    --AlmostBlack: hsl(0, 0%, 8%)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    padding: 0;
+    color: var(--MediumGray);
+    font-size: 18px;
+    font-family: 'Epilogue', sans-serif;
+}
+
+
+
+.countainer {
+    padding: 0 20px;
+}
+
+a,
+button,
+.button {
+    text-decoration: none;
+    color: initial;
+    cursor: pointer;
+}
+
+.button,
+button {
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    // border-bottom: 1px solid #eee;
+
+    .nav-left,
+    .nav-center,
+    .nav-right,
+    .navlist {
+        display: flex;
+        align-items: center;
+        gap: 15px
+    }
+
+    .nav-left {
+        margin-right: 40px;
+        margin-left: 0;
+
+        .logo {
+            color: var(--AlmostBlack);
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+    }
+
+    .nav-center {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .nav-right {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .navlist {
+        gap: 30px;
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            height: $navhight;
+            line-height: 1;
+            color: var(--MediumGray);
+            font-size: 1.3rem;
+            font-weight: 500;
+
+        }
+    }
+
+    .button,
+    button {
+        background-color: transparent;
+        font-size: 1.3rem;
+        line-height: 1;
+        padding: 10px 20px;
+        color: var(--MediumGray);
+
+        &.login {
+            border: none;
+        }
+
+        &.register {
+            border: 1px solid var(--MediumGray);
+
+        }
+
+    }
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .left {
+        // display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        padding: 124px 33px 0 160px;
+
+
+        h1 {
+            font-size: 5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: var(--AlmostBlack);
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .button {
+            font-size: 1.5rem;
+            font-weight: 500;
+            background-color: var(--AlmostBlack);
+            color: var(--AlmostWhite);
+            padding: 20px 30px;
+
+        }
+
+        .logo-f {
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+            align-items: center;
+            margin-top: 150px;
+            margin-bottom: 0;
+        }
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        padding: 80px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width:1300px) {
+    .nav {
+        .nav-left {
+            .logo {
+                font-size: 1.8rem;
+                font-weight: 700;
+            }
+
+        }
+
+        .navlist {
+            li a {
+                font-size: 1.1rem;
+            }
+        }
+
+        .button,
+        button {
+            font-size: 1.1rem;
+            line-height: 1;
+            padding: 10px 20px;
+            color: var(--MediumGray);
+
+        }
+    }
+
+    .hero {
+        .left {
+            padding: 80px 20px 0 130px;
+
+            h1 {
+                font-size: 3.7rem;
+                margin-bottom: 1.3rem;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 1.3rem;
+            }
+
+            .button {
+                font-size: 1.1rem;
+                padding: 10px 15px;
+
+            }
+
+            .logo-f {
+                margin-top: 80px;
+                margin-bottom: 0;
+            }
+        }
+
+        .right {
+            max-height: 100vh;
+            width: 50%;
+            padding: 100px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
