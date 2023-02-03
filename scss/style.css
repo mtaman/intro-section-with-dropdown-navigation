@@ -17,6 +17,7 @@ body {
   color: var(--MediumGray);
   font-size: 18px;
   font-family: 'Epilogue', sans-serif;
+  background-color: var(--AlmostWhite);
 }
 
 .countainer {
@@ -31,13 +32,30 @@ button,
   cursor: pointer;
 }
 
+a:hover,
+button:hover,
+.button:hover {
+  color: var(--AlmostBlack);
+}
+
+a:focus-within,
+button:focus-within,
+.button:focus-within {
+  outline: 1px solid var(--AlmostBlack);
+}
+
+a:hover {
+  color: var(--AlmostBlack);
+}
+
 .button,
 button {
-  -webkit-border-radius: 1rem;
-  -moz-border-radius: 1rem;
-  -ms-border-radius: 1rem;
-  -o-border-radius: 1rem;
-  border-radius: 1rem;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  border: 1px solid;
 }
 
 ul,
@@ -45,6 +63,10 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.hidden__M {
+  display: none !important;
 }
 
 .nav {
@@ -85,6 +107,7 @@ li {
 }
 
 .nav .navlist {
+  position: relative;
   gap: 30px;
 }
 
@@ -95,16 +118,112 @@ li {
   height: 60px;
   line-height: 1;
   color: var(--MediumGray);
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 500;
+}
+
+.nav .navlist li a:hover, .nav .navlist li a:focus, .nav .navlist li a:focus-within {
+  color: var(--AlmostBlack);
+}
+
+.nav .navlist li a:focus, .nav .navlist li a:focus-within {
+  outline: 1px solid var(--AlmostBlack);
+}
+
+.nav .navlist li a.has-dropdown {
+  position: relative;
+}
+
+.nav .navlist li a.has-dropdown::after {
+  content: "";
+  margin-left: 10px;
+  width: 10px;
+  height: 16px;
+  background-image: url(../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.nav .navlist li a.has-dropdown:focus-within::after, .nav .navlist li a.has-dropdown:hover::after, .nav .navlist li a.has-dropdown:focus::after {
+  content: "";
+  background-image: url(../images/icon-arrow-up.svg);
+}
+
+.nav .navlist li a.has-dropdown:hover + .dropdown,
+.nav .navlist li a.has-dropdown:focus + .dropdown,
+.nav .navlist li a.has-dropdown:focus-within + .dropdown {
+  display: block;
+}
+
+.nav .navlist .dropdown {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  z-index: 2;
+  padding: 20px;
+  font-size: 13px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--AlmostWhite);
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.12);
+}
+
+.nav .navlist .dropdown:hover, .nav .navlist .dropdown:focus, .nav .navlist .dropdown:focus-within {
+  display: block;
+}
+
+.nav .navlist .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav .navlist .dropdown ul li a {
+  gap: 2px;
+  height: 0;
+  padding: 10px 0;
+  font-size: .875rem;
+  color: var(--MediumGray);
+}
+
+.nav .navlist .dropdown ul li a:hover {
+  color: var(--AlmostBlack);
+}
+
+.nav .navlist .dropdown ul li a::before {
+  content: "";
+  margin-right: 10px;
+  width: 14px;
+  height: 19.33px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.nav .navlist .dropdown ul li a.todo::before {
+  background-image: url(../images/icon-todo.svg);
+}
+
+.nav .navlist .dropdown ul li a.calendar::before {
+  background-image: url(../images/icon-calendar.svg);
+}
+
+.nav .navlist .dropdown ul li a.reminder::before {
+  background-image: url(../images/icon-reminders.svg);
+}
+
+.nav .navlist .dropdown ul li a.planning::before {
+  background-image: url(../images/icon-planning.svg);
 }
 
 .nav .button,
 .nav button {
   background-color: transparent;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1;
-  padding: 10px 20px;
+  padding: 8px 12px;
   color: var(--MediumGray);
 }
 
@@ -113,12 +232,47 @@ li {
   border: none;
 }
 
+.nav .button.login:hover,
+.nav button.login:hover {
+  color: var(--AlmostBlack);
+}
+
 .nav .button.register,
 .nav button.register {
   border: 1px solid var(--MediumGray);
 }
 
+.nav .button.register:hover,
+.nav button.register:hover {
+  color: var(--AlmostBlack);
+}
+
+li.has--dropdown:has( > .dropdown:hover) > a::after,
+li.has--dropdown:has( > .dropdown:focus-within) > a::after {
+  content: "";
+  background-image: url(../images/icon-arrow-up.svg);
+}
+
+.dropdown {
+  -webkit-animation: rotateMenu 500ms ease-in-out forwards;
+  animation: rotateMenu 500ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+@keyframes rotateMenu {
+  0% {
+    transform: rotateX(-90deg);
+  }
+  70% {
+    transform: rotateX(20deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
 .hero {
+  width: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -128,11 +282,11 @@ li {
   align-items: center;
   justify-content: center;
   width: 50%;
-  padding: 124px 33px 0 160px;
+  padding: 195px 33px 0 160px;
 }
 
 .hero .left h1 {
-  font-size: 5rem;
+  font-size: 5.5vw;
   line-height: 1;
   font-weight: 700;
   color: var(--AlmostBlack);
@@ -151,7 +305,20 @@ li {
   font-weight: 500;
   background-color: var(--AlmostBlack);
   color: var(--AlmostWhite);
-  padding: 20px 30px;
+  padding: 20px 25px;
+}
+
+.hero .left .button:hover {
+  background-color: transparent;
+  color: var(--AlmostBlack);
+}
+
+.hero .left .button {
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
 }
 
 .hero .left .logo-f {
@@ -168,20 +335,65 @@ li {
   align-items: center;
   justify-content: center;
   width: 50%;
-  padding: 80px;
+  padding: 40px 40px 0;
 }
 
 .hero .right img {
-  width: 100%;
+  width: 85%;
 }
 
-@media only screen and (max-width: 1300px) {
+@keyframes slidingstep1 {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+  5% {
+    left: -75px;
+    opacity: 0.2;
+  }
+  10% {
+    left: -50px;
+    opacity: 0.4;
+  }
+  15% {
+    left: -25px;
+    opacity: 0.6;
+  }
+  20% {
+    left: 0px;
+    opacity: 1;
+  }
+  100% {
+    left: 0px;
+    opacity: 1;
+  }
+}
+
+.logo-f {
+  -webkit-animation-name: slidingstep1;
+  animation-name: slidingstep1;
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-device-width: 1024px), screen and (max-width: 1095px) {
+  .nav .nav-left {
+    margin-right: 20px;
+  }
   .nav .nav-left .logo {
     font-size: 1.8rem;
     font-weight: 700;
   }
   .nav .navlist li a {
-    font-size: 1.1rem;
+    font-size: .875rem;
   }
   .nav .button,
   .nav button {
@@ -191,10 +403,10 @@ li {
     color: var(--MediumGray);
   }
   .hero .left {
-    padding: 80px 20px 0 130px;
+    padding: 60px 25px 0 112px;
   }
   .hero .left h1 {
-    font-size: 3.7rem;
+    font-size: 5.5vw;
     margin-bottom: 1.3rem;
   }
   .hero .left p {
@@ -203,17 +415,66 @@ li {
     margin-bottom: 1.3rem;
   }
   .hero .left .button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     padding: 10px 15px;
   }
   .hero .left .logo-f {
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 0;
   }
   .hero .right {
     max-height: 100vh;
     width: 50%;
-    padding: 100px;
+    padding: 20px 15px 0 60px;
+    text-align: center;
+  }
+  .hero .right img {
+    width: 65%;
+  }
+}
+
+@media screen and (max-device-width: 768px) {
+  .hidden__D {
+    display: none !important;
+  }
+  .hero {
+    width: 100%;
+    align-items: start;
+    flex-direction: column-reverse;
+  }
+  .hero .left {
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  .hero .left h1 {
+    font-size: 2.1rem;
+    margin: 15px 0;
+  }
+  .hero .left p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .hero .left .button,
+  .hero .left button {
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  .hero .left .logo-f {
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  .hero .left .logo-f img {
+    width: 20%;
+  }
+  .hero .right {
+    padding: 15px 0;
+    width: 100%;
   }
   .hero .right img {
     width: 100%;

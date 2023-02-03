@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
+  <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,45 +31,97 @@
           </div>
         </div>
         <!-- Center Nav -->
-        <div class="nav-center">
+        <div class="nav-center hidden__D">
 
           <ul class="navlist">
-            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Company</a></li>
+            <li class="nav-item has--dropdown">
+              <a href="#" class="nav-link has-dropdown">Features</a>
+              <!-- DropDown 1 -->
+              <div class="dropdown" id="dropdown_1">
+                <ul class="uldropdown">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link todo" target="_self">Todo List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link calendar" target="_self">Calendar</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link reminder" target="_self" aria-label="Reminders">Reminders</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link planning" target="_self">Planning</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- / DropDown 1 -->
+            </li>
+
+
+
+            <li class="nav-item has--dropdown">
+              <a href="#" class="nav-link  has-dropdown" target="_self">Company</a>
+              <!-- DropDown 2 -->
+              <div class="dropdown" id="dropdown_2">
+                <ul class="uldropdown">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" target="_self">History</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" target="_self">Our Team</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link" target="_self">Blog</a>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- / DropDown 2 -->
+
+
+            </li>
+
+
+
             <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Careers</a></li>
             <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">About</a></li>
           </ul>
         </div>
         <!--/Center Nav -->
         <!-- nav right -->
-        <div class="nav-right">
+        <div class="nav-right hidden__D">
 
           <button class="button login" id="butnLogin" role="button" type="button">Login</button>
           <button class="button register" id="butnRegister" role="button" type="button">Register</button>
 
         </div>
         <!-- Nav right for mobile-->
-        <div class="nav-right_mobile"></div>
+        <div class="nav-right_mobile hidden_M"></div>
       </nav>
     </header>
 
     <main role="main" class="hero container">
       <div class="left">
-        <h1> Make remote work </h1>
-        <p>Get your team in sync, no matter your location. Streamline processes,
-          create team rituals, and watch productivity soar.</p>
+        <div>
+          <h1> Make remote work </h1>
+          <p>Get your team in sync, no matter your location. Streamline processes,
+            create team rituals, and watch productivity soar.</p>
 
 
-        <button class="button register" id="butnLearn" role="button" type="button">Learn more</button>
-        <div class="logo-f">
-          <img src="./images/client-databiz.svg" alt="client databiz" role="img">
-          <img src="./images/client-audiophile.svg" alt="client audiophile" role="img">
-          <img src="./images/client-meet.svg" alt="client meet" role="img">
-          <img src="./images/client-maker.svg" alt="client maker" role="img">
+          <button class="button learn" id="butnLearn" role="button" type="button">Learn more</button>
+          <div class="logo-f">
+            <img src="./images/client-databiz.svg" alt="client databiz" role="img">
+            <img src="./images/client-audiophile.svg" alt="client audiophile" role="img">
+            <img src="./images/client-meet.svg" alt="client meet" role="img">
+            <img src="./images/client-maker.svg" alt="client maker" role="img">
+          </div>
         </div>
       </div>
       <div class="right">
-        <img src="./images/image-hero-desktop.png" alt="Desktop Hero" role="img">
+        <picture>
+          <source media="(max-width: 768px)" srcset="./images/image-hero-mobile.png">
+          <img src="./images/image-hero-desktop.png" class="desktop-img" alt="Desktop Hero" role="img">
+
+        </picture>
       </div>
 
     </main>
@@ -78,7 +130,7 @@
   </div>
 
   <footer role="contentinfo">
-
+    <script src="./js/script.js"></script>
   </footer>
 
 
