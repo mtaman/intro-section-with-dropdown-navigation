@@ -121,6 +121,7 @@ li {
 .offcanves .offcanves__body ul li {
   margin-top: 1.1rem;
   font-size: .875rem;
+  color: var(--MediumGray);
 }
 
 .offcanves .offcanves__body ul li a {
@@ -131,6 +132,7 @@ li {
 
 .offcanves .offcanves__body ul li a:focus {
   outline: none;
+  color: var(--AlmostBlack);
 }
 
 .offcanves .offcanves__body ul li a.has-dropdown::after {
