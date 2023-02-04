@@ -20,36 +20,110 @@
 
 <body>
   <div class="page">
+
+    <aside class="offcanves hidean" id="offcanves">
+      <div class="overlay" id="offcanves_overlaay"></div>
+      <div class="offcanves__body countainer" id="offcanves_body">
+
+        <div class="offcanves__header">
+          <a href="#" class="icon__menu_close" id="offcanves_close">
+            <img src="./images/icon-close-menu.svg" alt="Menu">
+          </a>
+        </div>
+
+        <nav class="offcanves__nav">
+          <!-- nav -->
+
+          <ul class="navlist">
+            <li class="nav-item has--dropdown">
+              <a href="#" class="nav-link off-sub has-dropdown">Features</a>
+              <!-- DropDown 1 -->
+              <ul class="off_uldropdown hidean">
+                <li class="nav-item">
+                  <a href="#" class="nav-link todo w__icon" target="_self">Todo List</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link calendar w__icon" target="_self">Calendar</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link reminder w__icon" target="_self" aria-label="Reminders">Reminders</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link planning w__icon" target="_self">Planning</a>
+                </li>
+              </ul>
+
+              <!-- / DropDown 1 -->
+            </li>
+
+
+
+            <li class="nav-item has--dropdown">
+              <a href="#" class="nav-link  off-sub has-dropdown" target="_self">Company</a>
+              <!-- DropDown 2 -->
+              <ul class="off_uldropdown hidean">
+                <li class="nav-item">
+                  <a href="#" class="nav-link" target="_self">History</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" target="_self">Our Team</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" target="_self">Blog</a>
+                </li>
+
+              </ul>
+              <!-- / DropDown 2 -->
+
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Careers</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">About</a></li>
+          </ul>
+
+
+          <button class="button login" id="butnLoginoff" role="button" type="button">Login</button>
+          <button class="button register" id="butnRegisteroff" role="button" type="button">Register</button>
+
+
+
+          <!-- / -->
+
+
+        </nav>
+      </div>
+    </aside>
+
     <header role="banner">
       <nav role="navigation" class="nav countainer" id="nav">
         <!-- Nav Left -->
         <div class="nav-left">
-          <div class="logo" role="log">
+          <logo class="logo" role="log">
             <a href="#" class="logolink" role="link" target="_self">
-              <span>snap</span>
+              <img class="logo_imge" src="./images/logo.svg" alt="Snap"></img>
             </a>
-          </div>
+          </logo>
         </div>
         <!-- Center Nav -->
-        <div class="nav-center hidden__D">
+        <div class="nav-center hidden_M">
 
           <ul class="navlist">
             <li class="nav-item has--dropdown">
               <a href="#" class="nav-link has-dropdown">Features</a>
               <!-- DropDown 1 -->
-              <div class="dropdown" id="dropdown_1">
+              <div class="dropdown hidean" id="dropdown_1">
                 <ul class="uldropdown">
                   <li class="nav-item">
-                    <a href="#" class="nav-link todo" target="_self">Todo List</a>
+                    <a href="#" class="nav-link todo w__icon" target="_self">Todo List</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link calendar" target="_self">Calendar</a>
+                    <a href="#" class="nav-link calendar w__icon" target="_self">Calendar</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link reminder" target="_self" aria-label="Reminders">Reminders</a>
+                    <a href="#" class="nav-link reminder w__icon" target="_self" aria-label="Reminders">Reminders</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link planning" target="_self">Planning</a>
+                    <a href="#" class="nav-link planning w__icon" target="_self">Planning</a>
                   </li>
                 </ul>
               </div>
@@ -77,10 +151,7 @@
               </div>
               <!-- / DropDown 2 -->
 
-
             </li>
-
-
 
             <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">Careers</a></li>
             <li class="nav-item"><a href="#" class="nav-link" role="link" target="_self">About</a></li>
@@ -88,14 +159,18 @@
         </div>
         <!--/Center Nav -->
         <!-- nav right -->
-        <div class="nav-right hidden__D">
+        <div class="nav-right hidden_M">
 
           <button class="button login" id="butnLogin" role="button" type="button">Login</button>
           <button class="button register" id="butnRegister" role="button" type="button">Register</button>
 
         </div>
         <!-- Nav right for mobile-->
-        <div class="nav-right_mobile hidden_M"></div>
+        <div class="nav-right_mobile hidden__D">
+          <a href="#" class="icon__menu" id="offcanves_open">
+            <img src="./images/icon-menu.svg" alt="Menu">
+          </a>
+        </div>
       </nav>
     </header>
 
